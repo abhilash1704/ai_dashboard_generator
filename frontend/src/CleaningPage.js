@@ -9,6 +9,7 @@ function Sidebar({ activeNav, onNav, hasData }) {
   const navItems = [
     { id: "upload", icon: "⬆", label: "Upload Data" },
     { id: "cleaned", icon: "✨", label: "Data Cleaned", disabled: !hasData },
+    { id: "eda", icon: "🔍", label: "Exploratory Data Analysis", disabled: !hasData },
     { id: "charts", icon: "📊", label: "Charts", disabled: !hasData },
   ];
 
@@ -71,6 +72,7 @@ export default function CleaningPage() {
 
   const handleNav = (id) => {
     if (id === "upload") navigate("/upload");
+    if (id === "eda") navigate("/eda", { state: { data } });
     if (id === "charts") navigate("/charts", { state: { data } });
   };
 
@@ -86,7 +88,7 @@ export default function CleaningPage() {
         <TopBar
           title="Data Cleaned Report"
           right={
-            <button className="btn btn-primary" onClick={() => navigate("/charts", { state: { data } })}>
+            <button className="btn btn-primary" onClick={() => navigate("/eda", { state: { data } })}>
               NEXT →
             </button>
           }
@@ -193,7 +195,7 @@ export default function CleaningPage() {
             </button>
             <button
               className="btn btn-primary"
-              onClick={() => navigate("/charts", { state: { data } })}
+              onClick={() => navigate("/eda", { state: { data } })}
             >
               NEXT →
             </button>

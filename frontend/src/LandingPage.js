@@ -138,16 +138,6 @@ export default function LandingPage() {
                 alt="AI-powered data automation and dashboard creation"
                 className="lp-hero-img"
               />
-              {/* floating chips */}
-              <div className="lp-float-chip lp-float-chip--tl">
-                <span>🧹</span> Data Cleaned
-              </div>
-              <div className="lp-float-chip lp-float-chip--br">
-                <span>📊</span> Dashboard Ready
-              </div>
-              <div className="lp-float-chip lp-float-chip--ml">
-                <span>🤖</span> AI Summary
-              </div>
             </div>
           </div>
         </div>
@@ -177,28 +167,28 @@ export default function LandingPage() {
             icon="🧹"
             title="Smart Data Cleaning"
             desc="Automatically detects and fixes nulls, duplicates, type mismatches, and format inconsistencies in your dataset before analysis begins."
-            accent="rgba(99,102,241,0.12)"
+            accent="rgba(15,23,42,0.04)"
             delay={0}
           />
           <FeatureCard
             icon="⚡"
             title="Auto Dashboard Creation"
             desc="AI selects the most meaningful chart types for each column — bar, pie, scatter, trend lines — and assembles them into a beautiful, interactive dashboard."
-            accent="rgba(16,185,129,0.12)"
+            accent="rgba(15,23,42,0.04)"
             delay={80}
           />
           <FeatureCard
             icon="📝"
             title="AI-Generated Summaries"
             desc="Get plain-language insights written by AI for every chart and dataset overview, so you understand your data at a glance — no analyst required."
-            accent="rgba(59,130,246,0.12)"
+            accent="rgba(15,23,42,0.04)"
             delay={160}
           />
           <FeatureCard
             icon="🔁"
             title="Seamless Integration"
             desc="Export dashboards as HTML, share via link, or integrate our API into your existing data pipelines. Your workflow, your way."
-            accent="rgba(245,158,11,0.12)"
+            accent="rgba(15,23,42,0.04)"
             delay={240}
           />
         </div>

@@ -11,6 +11,7 @@ def home():
     return jsonify({"message": "Backend is running 🚀"})
 
 import re
+from eda import perform_eda
 
 def clean_dataset(df):
     report = []
@@ -142,13 +143,17 @@ def upload_file():
 
         # Replace NaN with None so it becomes valid JSON null
         df = df.replace({np.nan: None})
+        
+        # Perform EDA after cleaning and converting NaNs
+        eda_results = perform_eda(df)
 
         return jsonify({
             "columns": list(df.columns),
             "rows": df.to_dict(orient="records"),
             "total": len(df),
             "report": report,
-            "stats": stats
+            "stats": stats,
+            "eda": eda_results
         })
 
     except Exception as e:

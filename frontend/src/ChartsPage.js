@@ -82,6 +82,7 @@ function Sidebar({ activeNav, onNav, hasData }) {
   const navItems = [
     { id: "upload", icon: "⬆", label: "Upload Data" },
     { id: "cleaned", icon: "✨", label: "Data Cleaned", disabled: !hasData },
+    { id: "eda", icon: "🔍", label: "Exploratory Data Analysis", disabled: !hasData },
     { id: "charts", icon: "📊", label: "Charts", disabled: !hasData },
   ];
 
@@ -296,6 +297,7 @@ export default function ChartsPage() {
   const handleNav = (id) => {
     if (id === "upload") navigate("/upload");
     if (id === "cleaned") navigate("/cleaned", { state: { data } });
+    if (id === "eda") navigate("/eda", { state: { data } });
     if (id === "charts") navigate("/charts", { state: { data } });
   };
 

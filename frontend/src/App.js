@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import ChartsPage from "./ChartsPage";
 import LandingPage from "./LandingPage";
 import CleaningPage from "./CleaningPage";
+import EdaPage from "./EdaPage";
 import "./index.css";
 
 import {
@@ -19,6 +20,7 @@ function Sidebar({ activeNav, onNav, hasData }) {
   const navItems = [
     { id: "upload", icon: "⬆", label: "Upload Data" },
     { id: "cleaned", icon: "✨", label: "Data Cleaned", disabled: !hasData },
+    { id: "eda", icon: "🔍", label: "Exploratory Data Analysis", disabled: !hasData },
     { id: "charts", icon: "📊", label: "Charts", disabled: !hasData },
   ];
 
@@ -229,9 +231,10 @@ function Home() {
         activeNav="upload"
         hasData={!!data}
         onNav={(id) => {
-          if (id === "charts" && data) navigate("/charts", { state: { data } });
           if (id === "upload") navigate("/upload");
           if (id === "cleaned" && data) navigate("/cleaned", { state: { data } });
+          if (id === "eda" && data) navigate("/eda", { state: { data } });
+          if (id === "charts" && data) navigate("/charts", { state: { data } });
         }}
       />
       <div className="main-area">
@@ -332,6 +335,7 @@ export default function App() {
       <Route path="/"        element={<LandingPage />} />
       <Route path="/upload"  element={<Home />} />
       <Route path="/cleaned" element={<CleaningPage />} />
+      <Route path="/eda"     element={<EdaPage />} />
       <Route path="/charts"  element={<ChartsPage />} />
     </Routes>
   );
